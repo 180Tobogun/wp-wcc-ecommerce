@@ -1,0 +1,126 @@
+
+
+<!--
+
+<tr valign="top">
+			<th scope="row" class="titledesc">
+								<label for="woocommerce_ecc_redirect_page_id">Return Page</label>
+			</th>
+			<td class="forminp">
+				<fieldset>
+					<legend class="screen-reader-text"><span>Return Page</span></legend>
+					<select class="select " name="woocommerce_ecc_redirect_page_id" id="woocommerce_ecc_redirect_page_id" style="">
+													<option value="0" selected="selected">Select Page</option>
+													<option value="2">Sample Page</option>
+													<option value="4">Магазин</option>
+													<option value="5">Кошик</option>
+													<option value="6">Оформлення замовлення</option>
+													<option value="7">Мій обліковий запис</option>
+											</select>
+					<p class="description">URL of success page</p>
+				</fieldset>
+			</td>
+		</tr>
+
+-->
+
+
+
+
+
+	<tr valign="top">
+		<th scope="row" class="titledesc">
+            <label for="woocommerce_ecc_pem_file">*.pem File</label>
+		</th>
+		<td class="forminp">
+			<form method='post'>
+    		
+    		<div>
+                <input type="file" id="file-input" name="ecc_load_pem_file" accept=".pem">
+                <h3>Contents of the file:</h3>
+                <pre id="file-content"></pre>
+                
+                <script type="text/javascript">
+                    function readPemFile(e) {
+                        var file = e.target.files[0];
+                        if (!file) {
+                            return;
+                        }
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            var contents = e.target.result;
+                            displayPemFileContents(contents);
+                        };
+                        reader.readAsText(file);
+                    }
+            
+                    function displayPemFileContents(contents) {
+                        var element = document.getElementById('file-content');
+                        element.textContent = contents;
+                        
+                        <?php echo 'QQQQZZZZQQQQ' ?>
+                        
+                        
+                    }
+            
+                    document.getElementById('file-input')
+                        .addEventListener('change', readPemFile, false);
+                </script>
+            
+            </div>
+    		
+        		<!--<input id="upload_image_button" type="button" class="button" value="<?php _e( 'Upload image' ); ?>" />-->
+        		<!--<input type='hidden' name='image_attachment_id' id='image_attachment_id' value='QQ'>-->
+        		<!--<input type="submit" name="submit_image_selector" value="Save" class="button-primary">-->
+        	</form>
+		</td>
+	</tr>
+
+	<tr valign="top">
+		<th scope="row" class="titledesc">
+            <label for="woocommerce_ecc_pub_file">*.pub File</label>
+		</th>
+		<td class="forminp">
+			<form method='post'>
+			    
+			    <div>
+                <input type="file" id="file-input2" name="ecc_load_pem_file" accept=".pub">
+                <h3>Contents of the file:</h3>
+                <pre id="pub-file-content"></pre>
+                
+                <script type="text/javascript">
+                    function readPubFile(e) {
+                        var file = e.target.files[0];
+                        if (!file) {
+                            return;
+                        }
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            var contents = e.target.result;
+                            displayPubFileContents(contents);
+                        };
+                        reader.readAsText(file);
+                    }
+            
+                    function displayPubFileContents(contents) {
+                        var element = document.getElementById('pub-file-content');
+                        element.textContent = contents;
+                        
+                        <?php echo 'QQQQZZZZQQQQ' ?>
+                        
+                        
+                    }
+            
+                    document.getElementById('file-input2')
+                        .addEventListener('change', readPubFile, false);
+                </script>
+            
+            </div>
+    		
+        		<!--<input id="upload_image_button" type="button" class="button" value="<?php _e( 'Upload image' ); ?>" />-->
+        		<!--<input type='hidden' name='image_attachment_id' id='image_attachment_id' value='QQ'>-->
+        		<!--<input type="submit" name="submit_image_selector" value="Save" class="button-primary">-->
+        	</form>
+		</td>
+	</tr>
+	
